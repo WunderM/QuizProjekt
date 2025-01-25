@@ -3,18 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Login" Height="500" Width="800" Background="{StaticResource BackgroundBrush}">
     <Grid Margin="20">
-        <!-- Titel -->
         <TextBlock Text="Welcome Back!" Style="{StaticResource TitleTextBlockStyle}" Margin="0,20,0,0" />
 
-        <!-- Name Label und Textbox -->
         <TextBlock Text="Username:" Style="{StaticResource LabelTextBlockStyle}" Margin="100,0,0,130" />
         <TextBox x:Name="LoginName" Style="{StaticResource StandardTextBoxStyle}" Margin="220,0,0,130" />
 
-        <!-- Passwort Label und Textbox -->
         <TextBlock Text="Password:" Style="{StaticResource LabelTextBlockStyle}" Margin="100,0,0,50" />
         <PasswordBox x:Name="LoginPassword" Style="{StaticResource StandardPasswordBoxStyle}" Margin="220,0,0,50" />
 
-        <!-- Login Button mit Border für CornerRadius -->
         <Border CornerRadius="8" Background="{StaticResource PrimaryBrush}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,100,0,0">
             <Button Content="Log In" x:Name="Enter" Style="{StaticResource LoginButtonStyle}" Click="LogIn" />
         </Border>

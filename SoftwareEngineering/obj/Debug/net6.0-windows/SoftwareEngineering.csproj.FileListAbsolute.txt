@@ -5,6 +5,7 @@ C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\bin\Debug\net6.0-
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\bin\Debug\net6.0-windows\SoftwareEngineering.dll
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\bin\Debug\net6.0-windows\SoftwareEngineering.pdb
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\SoftwareEngineering.csproj.AssemblyReference.cache
+C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\MainWindow.baml
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\LoginWindow.baml
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\Resources\DesignResource.baml
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\MainWindow.g.cs
@@ -15,7 +16,6 @@ C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\SoftwareEngineering_MarkupCompile.cache
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\SoftwareEngineering_MarkupCompile.lref
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\App.baml
-C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\MainWindow.baml
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\SignInWindow.baml
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\Categorie.baml
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\SoftwareEngineering.g.resources

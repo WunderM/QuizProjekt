@@ -36,13 +36,13 @@ namespace SoftwareEngineering
             LoginWindow login = new LoginWindow();
             login.ShowDialog();
         }
-   
+        
         private void closeMainWindow(object sender, RoutedEventArgs e)
         {
             var result = MessageBox.Show("Möchten Sie das Fenster wirklich schließen?",
-                              "Fenster schließen",
-                              MessageBoxButton.YesNo,
-                              MessageBoxImage.Question);
+                "Fenster schließen",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
 
             if (result == MessageBoxResult.Yes)
             {
