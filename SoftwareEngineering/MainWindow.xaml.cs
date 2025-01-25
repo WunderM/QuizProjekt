@@ -27,9 +27,8 @@ namespace SoftwareEngineering
 
         private void SignInClick(object sender, RoutedEventArgs e)
         {
-
-            SignInWindow signin = new SignInWindow();
-            signin.ShowDialog();
+            Signin.Content = new SignInPage();   
+            ShowFrame("Signin");
         }
 
         private void ShowFrame(string frameName)

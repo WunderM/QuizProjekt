@@ -1,51 +1,43 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace SoftwareEngineering
 {
     public partial class LoginPage : Page
     {
-        public string Name1 { get; set; }
-        public string Password { get; set; }
+        private readonly ApiClient _apiClient;
 
         public LoginPage()
         {
             InitializeComponent();
+            _apiClient = new ApiClient();
         }
 
-        public bool CheckLogin(string name, string password)
+        private async void LogIn(object sender, RoutedEventArgs e)
         {
-            return !string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(password);
-        }
+            var username = LoginName.Text;
+            var password = LoginPassword.Password;
 
-        private void LogIn(object sender, RoutedEventArgs e)
-        {
-            Name1 = LoginName.Text;
-            Password = LoginPassword.Password; // Richtig: PasswordBox verwendet Password-Eigenschaft.
-
-            if (CheckLogin(Name1, Password))
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                // Lade eine andere Seite (z. B. Kategorienseite) in den Haupt-Frame
+                MessageBox.Show("Bitte füllen Sie beide Felder aus.");
+                return;
+            }
+
+            // API-Aufruf: Login
+            var success = await _apiClient.LoginAsync(username, password);
+
+            if (success)
+            {
+                MessageBox.Show("Login erfolgreich!");
+                // Hier kannst du zur nächsten Seite navigieren
                 var mainWindow = (MainWindow)Application.Current.MainWindow;
-                mainWindow.Login.Content = new Page(); // Beispiel-Seite für Kategorien
+                mainWindow.MainW.Content = new Page(); // Beispielseite
             }
             else
             {
-                MessageBox.Show(string.IsNullOrEmpty(Name1) || string.IsNullOrEmpty(Password)
-                    ? "Bitte füllen Sie beide Felder aus."
-                    : "Name oder Passwort falsch.");
+                MessageBox.Show("Login fehlgeschlagen. Bitte überprüfen Sie Ihre Eingaben.");
             }
-        }
-
-        private void LoginName_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            Name1 = LoginName.Text;
-        }
-
-        private void LoginPassword_TextChanged(object sender, RoutedEventArgs e)
-        {
-            Password = LoginPassword.Password;
         }
     }
 }
