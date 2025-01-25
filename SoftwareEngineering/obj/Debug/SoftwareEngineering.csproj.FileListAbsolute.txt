@@ -1,0 +1,65 @@
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.csproj.AssemblyReference.cache
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\obj\Debug\MainWindow.g.cs
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\obj\Debug\App.g.cs
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering_MarkupCompile.cache
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering_MarkupCompile.lref
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\bin\Debug\SoftwareEngineering.exe.config
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\bin\Debug\SoftwareEngineering.exe
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\bin\Debug\SoftwareEngineering.pdb
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\obj\Debug\CategoriePage.g.cs
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\obj\Debug\LoginWindow.g.cs
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\obj\Debug\SignInWindow.g.cs
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\obj\Debug\MainWindow.baml
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\obj\Debug\CategoriePage.baml
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\obj\Debug\LoginWindow.baml
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\obj\Debug\SignInWindow.baml
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.g.resources
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.Properties.Resources.resources
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.csproj.GenerateResource.cache
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.csproj.CoreCompileInputs.cache
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.exe
+C:\Users\mgers\source\repos\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.pdb
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\bin\Debug\SoftwareEngineering.exe.config
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\bin\Debug\SoftwareEngineering.exe
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\bin\Debug\SoftwareEngineering.pdb
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.csproj.AssemblyReference.cache
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\CategoriePage.g.cs
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\LoginWindow.g.cs
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\MainWindow.g.cs
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\SignInWindow.g.cs
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\App.g.cs
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering_MarkupCompile.cache
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering_MarkupCompile.lref
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\CategoriePage.baml
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\LoginWindow.baml
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\MainWindow.baml
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\SignInWindow.baml
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.g.resources
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.Properties.Resources.resources
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.csproj.GenerateResource.cache
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.csproj.CoreCompileInputs.cache
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.exe
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.pdb
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\CP.g.cs
+C:\Users\mgers\Desktop\SoftwareEngineering\SoftwareEngineering\obj\Debug\CP.baml
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.csproj.AssemblyReference.cache
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\obj\Debug\LoginWindow.g.cs
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\obj\Debug\MainWindow.g.cs
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\obj\Debug\SignInWindow.g.cs
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\obj\Debug\App.g.cs
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering_MarkupCompile.cache
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering_MarkupCompile.lref
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.exe
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.pdb
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\bin\Debug\SoftwareEngineering.exe.config
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\bin\Debug\SoftwareEngineering.exe
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\bin\Debug\SoftwareEngineering.pdb
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\obj\Debug\LoginWindow.baml
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\obj\Debug\MainWindow.baml
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\obj\Debug\SignInWindow.baml
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.g.resources
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.Properties.Resources.resources
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.csproj.GenerateResource.cache
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\obj\Debug\SoftwareEngineering.csproj.CoreCompileInputs.cache
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\obj\Debug\Categorie.g.cs
+C:\Users\mgers\OneDrive\Wirtschaftsinformatik Studium\SoftwareEngineering\SoftwareEngineering\obj\Debug\Categorie.baml
