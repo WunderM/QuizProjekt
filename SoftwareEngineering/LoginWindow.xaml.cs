@@ -1,89 +1,61 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace SoftwareEngineering
 {
-    /// <summary>
-    /// Interaktionslogik für LoginWindow.xaml
-    /// </summary>
     public partial class LoginWindow : Window
     {
-        public string Name1;
-        public string Password;
+        public string Name1 { get; set; }
+        public string Password { get; set; }
 
-       
         public LoginWindow()
         {
             InitializeComponent();
         }
-        public bool Checklogin(string name, string password)
+
+        public bool CheckLogin(string name, string password)
         {
-            if (name == null || password == null)
-            {
-                return false;
-            }
-            else return true;
+            return !string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(password);
         }
+
         private void LogIn(object sender, RoutedEventArgs e)
         {
-            if (Checklogin(Name1, Password) == true)
+            Name1 = LoginName.Text;
+            Password = LoginPassword.Password; // Korrektur: .Password statt .Text
+
+            if (CheckLogin(Name1, Password))
             {
-                var C = new Categorie();
+                var categorieWindow = new Categorie();
                 this.Close();
-                C.ShowDialog();
-               
-
-
-            }
-            else if (Name1 == null || Password == null)
-            {
-                MessageBox.Show("Bitte füllen sie beide Felder aus");
+                categorieWindow.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Name oder Passwort falsch");
+                MessageBox.Show(string.IsNullOrEmpty(Name1) || string.IsNullOrEmpty(Password)
+                    ? "Bitte füllen Sie beide Felder aus."
+                    : "Name oder Passwort falsch.");
             }
+        }
 
-            }
         private void LoginName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string name;
-            name = LoginName.Text;
-            if (name == null)
+            Name1 = LoginName.Text;
+
+            if (string.IsNullOrEmpty(Name1))
             {
-                MessageBox.Show("Bitte Namen eingeben");
+                MessageBox.Show("Bitte Namen eingeben.");
             }
-         
-            Name1 = name;
         }
 
-        private void LoginPassword_TextChanged(object sender, TextChangedEventArgs e)
+        private void LoginPassword_TextChanged(object sender, RoutedEventArgs e)
         {
-            string password;
-            password = LoginPassword.Text;
-            if (password == null)
+            Password = LoginPassword.Password; // Korrektur: .Password statt .Text
+
+            if (string.IsNullOrEmpty(Password))
             {
-                MessageBox.Show("Bitte Password eingeben");
+                MessageBox.Show("Bitte Passwort eingeben.");
             }
-           
-            Password = password;
         }
-        class checkLogin
-        {
-
-        }
-
-     
     }
 }

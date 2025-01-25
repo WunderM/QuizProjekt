@@ -5,18 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SoftwareEngineering"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800" Background="Aqua">
-    <Grid>
-        <TextBlock Text="LOGIN" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="40" FontWeight="Bold" />
-        <Button Content="Name:" FontSize="22" BorderThickness="0" Background="DeepSkyBlue" Height="50" Width="150" MinWidth="50" MinHeight="150" Margin="184,167,466,217" FontWeight="Bold" FontStyle="Italic"/>
-        <Button Content="Password:" FontSize="22" BorderThickness="0" Background="DeepSkyBlue" Height="50" Width="150" Margin="184,222,466,162" FontWeight="Bold" FontStyle="Italic"></Button>
-        <TextBox x:Name="LoginName"  Background="LightSlateGray" BorderThickness="0" Height="50" Width="150" Margin="334,167,316,217" FontWeight="Bold" FontStyle="Italic" FontSize="20" TextAlignment="Center" TextChanged="LoginName_TextChanged" ></TextBox>
-        <TextBox x:Name="LoginPassword"  Background="LightSlateGray" BorderThickness="0" Height="50"  Width="150" Margin="334,222,316,162" FontWeight="Bold" FontStyle="Italic" TextAlignment="Center" FontSize="20" TextChanged="LoginPassword_TextChanged" />
-        <Button Content="Join Game" FontSize="30" x:Name="Enter" Width="200" Height="108" Margin="499,167,101,159" Background="LightGreen" Click="LogIn" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" >
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
+        Title="Login" Height="500" Width="800" Background="#F3F4F6">
+    <Grid Margin="20">
+        <!-- Titel -->
+        <TextBlock Text="Welcome Back!" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="36" FontWeight="Bold" Foreground="#2C3E50" Margin="0,20,0,0" />
 
-        </Button>
+        <!-- Name Label und Textbox -->
+        <TextBlock Text="Username:" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" FontWeight="SemiBold" Foreground="#34495E" Margin="100,0,0,130" />
+        <TextBox x:Name="LoginName" Height="40" Width="300" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="220,0,0,130"
+            Background="#E8F0FE" BorderBrush="#B0BEC5" BorderThickness="1" FontSize="18" Padding="10" />
+
+        <!-- Passwort Label und Textbox -->
+        <TextBlock Text="Password:" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" FontWeight="SemiBold" Foreground="#34495E" Margin="100,0,0,50" />
+        <PasswordBox x:Name="LoginPassword" Height="40" Width="300" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="220,0,0,50"
+            Background="#E8F0FE" BorderBrush="#B0BEC5" BorderThickness="1" FontSize="18" Padding="10" />
+
+        <!-- Login Button mit Border für CornerRadius -->
+        <Border CornerRadius="8" Background="#2ECC71" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,100,0,0">
+            <Button Content="Log In" x:Name="Enter" Width="200" Height="50"
+                    Background="Transparent" Foreground="White" FontSize="20" FontWeight="Bold" BorderThickness="0" Click="LogIn">
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="5" BlurRadius="10" Color="#34495E" />
+                </Button.Effect>
+            </Button>
+        </Border>
     </Grid>
 </Window>
