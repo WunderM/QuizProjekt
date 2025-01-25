@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "SizEQD9WugjqB3Q9qqOoghe4U8lt+GCZj4M6I+1L8EvRhpcVH68BAnXhaqm+s84hJ8HLvR+cg+j6bTx61Xwibw==",
+  "success": true,
+  "projectFilePath": "C:\\studium\\SoftwareEngineering\\QuizProjekt\\Backend\\QuizPlatform\\QuizPlatform\\QuizPlatform.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\M.Wunder\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.31\\microsoft.netcore.app.ref.6.0.31.nupkg.sha512",
+    "C:\\Users\\M.Wunder\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.31\\microsoft.windowsdesktop.app.ref.6.0.31.nupkg.sha512"
+  ],
+  "logs": []
+}

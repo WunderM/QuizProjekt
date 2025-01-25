@@ -1,0 +1,7 @@
+C:\studium\SoftwareEngineering\QuizProjekt\Backend\QuizPlatform\obj\Debug\net6.0\QuizPlatform.csproj.AssemblyReference.cache
+C:\studium\SoftwareEngineering\QuizProjekt\Backend\QuizPlatform\obj\Debug\net6.0\QuizPlatform.GeneratedMSBuildEditorConfig.editorconfig
+C:\studium\SoftwareEngineering\QuizProjekt\Backend\QuizPlatform\obj\Debug\net6.0\QuizPlatform.AssemblyInfoInputs.cache
+C:\studium\SoftwareEngineering\QuizProjekt\Backend\QuizPlatform\obj\Debug\net6.0\QuizPlatform.AssemblyInfo.cs
+C:\studium\SoftwareEngineering\QuizProjekt\Backend\QuizPlatform\obj\Debug\net6.0\QuizPlatform.csproj.CoreCompileInputs.cache
+C:\studium\SoftwareEngineering\QuizProjekt\Backend\QuizPlatform\obj\Debug\net6.0\QuizPlatform.MvcApplicationPartsAssemblyInfo.cs
+C:\studium\SoftwareEngineering\QuizProjekt\Backend\QuizPlatform\obj\Debug\net6.0\QuizPlatform.MvcApplicationPartsAssemblyInfo.cache
