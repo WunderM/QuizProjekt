@@ -1,0 +1,47 @@
+﻿<Page x:Class="SoftwareEngineering.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Login"
+    Background="{StaticResource BackgroundBrush}">
+    <Grid>
+        <!-- Hauptlayout mit Zeilen -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" /> <!-- Header -->
+            <RowDefinition Height="*" />   <!-- Inhalt -->
+        </Grid.RowDefinitions>
+
+        <!-- Titel -->
+        <TextBlock Text="Welcome Back!" 
+            Style="{StaticResource TitleTextBlockStyle}" 
+            Grid.Row="0" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" 
+            Margin="0,20,0,20" />
+
+        <!-- Eingabefelder -->
+        <StackPanel Grid.Row="1" 
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Center" 
+                    Width="400">
+            <!-- Username -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                <TextBlock Text="Username:" Style="{StaticResource LabelTextBlockStyle}" Width="120" />
+                <TextBox x:Name="LoginName" Style="{StaticResource StandardTextBoxStyle}" Width="250" />
+            </StackPanel>
+
+            <!-- Password -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                <TextBlock Text="Password:" Style="{StaticResource LabelTextBlockStyle}" Width="120" />
+                <PasswordBox x:Name="LoginPassword" Style="{StaticResource StandardPasswordBoxStyle}" Width="250" />
+            </StackPanel>
+
+            <!-- Login Button -->
+            <Border CornerRadius="8" Background="{StaticResource PrimaryBrush}" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <Button Content="Log In" 
+                        x:Name="Enter" 
+                        Style="{StaticResource LoginButtonStyle}" 
+                        Click="LogIn" />
+            </Border>
+        </StackPanel>
+    </Grid>
+</Page>

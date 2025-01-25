@@ -31,12 +31,39 @@ namespace SoftwareEngineering
             SignInWindow signin = new SignInWindow();
             signin.ShowDialog();
         }
+
+        private void ShowFrame(string frameName)
+        {
+            // Alle Frames ausblenden
+            MainW.Visibility = Visibility.Collapsed;
+            Guest.Visibility = Visibility.Collapsed;
+            Login.Visibility = Visibility.Collapsed;
+            Signin.Visibility = Visibility.Collapsed;
+
+            // Nur den gewünschten Frame anzeigen
+            switch (frameName)
+            {
+                case "MainW":
+                    MainW.Visibility = Visibility.Visible;
+                    break;
+                case "Guest":
+                    Guest.Visibility = Visibility.Visible;
+                    break;
+                case "Login":
+                    Login.Visibility = Visibility.Visible;
+                    break;
+                case "Signin":
+                    Signin.Visibility = Visibility.Visible;
+                    break;
+            }
+        }
+
         private void LoginClick(object sender, RoutedEventArgs e)
         {
-            LoginWindow login = new LoginWindow();
-            login.ShowDialog();
+            Login.Content = new LoginPage();   
+            ShowFrame("Login");
         }
-        
+
         private void closeMainWindow(object sender, RoutedEventArgs e)
         {
             var result = MessageBox.Show("Möchten Sie das Fenster wirklich schließen?",
@@ -54,7 +81,7 @@ namespace SoftwareEngineering
             var C = new Categorie();
             C.ShowDialog();
         }
-            
+
 
     }
 }

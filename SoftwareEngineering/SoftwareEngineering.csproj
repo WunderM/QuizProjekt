@@ -14,7 +14,7 @@
   <ItemGroup>
     <Page Include="App.xaml" />
     <Page Include="MainWindow.xaml" />
-    <Page Include="LoginWindow.xaml" />
+    <Page Include="LoginPage.xaml" />
     <Page Include="SignInWindow.xaml" />
     <Page Include="Categorie.xaml" />
     <Page Include="Resources/DesignResource.xaml" />
