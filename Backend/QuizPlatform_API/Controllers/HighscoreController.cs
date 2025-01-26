@@ -42,7 +42,7 @@ namespace QuizPlatform_API.Controllers
             var highscores = await _context.Highscores
                 .Where(h => h.QuizId == quizId)
                 .OrderByDescending(h => h.Score)
-                .Take(5) // Nur die Top 5
+                .Take(25) // Nur die Top 5
                 .Select(h => new
                 {
                     PlayerName = h.UserNavigation.Username, // Spielername aus der User-Tabelle

@@ -1,3 +1,4 @@
+using System.Diagnostics.Metrics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using QuizPlatform_API.Models;
@@ -91,14 +92,12 @@ namespace QuizPlatform_API.Controllers
         }
 
         [HttpPost("SubmitAnswers")]
-        public IActionResult SubmitAnswers([FromBody] AnswerSubmissionRequest request)
+        public async Task<IActionResult> SubmitAnswers([FromBody] AnswerSubmissionRequest request)
         {
             if (request.Answers == null || !request.Answers.Any())
             {
                 return BadRequest(new { Message = "Keine Antworten übermittelt." });
             }
-
-            var userId = request.UserId;
 
             // Abrufen der zugehörigen Fragen aus der Datenbank
             var questionIds = request.Answers.Select(a => a.QuestionId).ToList();
@@ -118,26 +117,49 @@ namespace QuizPlatform_API.Controllers
                 return BadRequest(new { Message = "Keine passenden Fragen gefunden." });
             }
 
-            double score = (double)totalCorrectAnswers / totalQuestions * 0.756 * 100;
+            // Punktzahl berechnen
+            double score = (double)totalCorrectAnswers / totalQuestions * 0.756 * 10000;
             int roundedScore = (int)Math.Round(score);
 
+
+            if(request.UserId > 0){
+                // Highscore erstellen
+                var highscore = new Highscore
+                {
+                    CreatedAt = DateTime.UtcNow,
+                    NumberOfQuestions = totalQuestions,
+                    QuizId = request.QuizId,
+                    UserId = request.UserId,
+                    Score = roundedScore
+                };
+
+                // Highscore speichern
+                await CreateHighscoreAsync(highscore);
+            }
             // Rückgabe der Punktzahl und UserID
             return Ok(new
             {
-                UserId = userId,
+                UserId = request.UserId,
                 Score = roundedScore
             });
         }
 
+        private async Task CreateHighscoreAsync(Highscore highscore)
+        {
+            _context.Highscores.Add(highscore);
+            await _context.SaveChangesAsync();
+        }
+
+
     }
 
     public class AnswerSubmissionRequest
-{
-    public long UserId { get; set; }
+    {
+        public long UserId { get; set; }
 
-    public long QuizId { get; set; }
-    public List<AnswerSubmission> Answers { get; set; } = new();
-}
+        public long QuizId { get; set; }
+        public List<AnswerSubmission> Answers { get; set; } = new();
+    }
 
     public class AnswerSubmission
     {

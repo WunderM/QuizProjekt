@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuizPlatform_API.Models;
 
 public partial class Highscore
 {
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public long Id { get; set; }
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow; // Standardwert setzen
