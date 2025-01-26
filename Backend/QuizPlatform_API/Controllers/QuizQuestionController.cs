@@ -89,7 +89,62 @@ namespace QuizPlatform_API.Controllers
 
             return NoContent();
         }
+
+        [HttpPost("SubmitAnswers")]
+        public IActionResult SubmitAnswers([FromBody] AnswerSubmissionRequest request)
+        {
+            if (request.Answers == null || !request.Answers.Any())
+            {
+                return BadRequest(new { Message = "Keine Antworten übermittelt." });
+            }
+
+            var userId = request.UserId;
+
+            // Abrufen der zugehörigen Fragen aus der Datenbank
+            var questionIds = request.Answers.Select(a => a.QuestionId).ToList();
+            var questions = _context.QuizQuestions
+                                    .Where(q => questionIds.Contains(q.Id))
+                                    .ToDictionary(q => q.Id, q => q.AnswerTrue);
+
+            int totalCorrectAnswers = request.Answers.Count(a =>
+                questions.ContainsKey(a.QuestionId) &&
+                questions[a.QuestionId].Equals(a.SelectedAnswer, StringComparison.OrdinalIgnoreCase)
+            );
+
+            int totalQuestions = questions.Count;
+
+            if (totalQuestions == 0)
+            {
+                return BadRequest(new { Message = "Keine passenden Fragen gefunden." });
+            }
+
+            double score = (double)totalCorrectAnswers / totalQuestions * 0.756 * 100;
+            int roundedScore = (int)Math.Round(score);
+
+            // Rückgabe der Punktzahl und UserID
+            return Ok(new
+            {
+                UserId = userId,
+                Score = roundedScore
+            });
+        }
+
     }
+
+    public class AnswerSubmissionRequest
+{
+    public long UserId { get; set; }
+
+    public long QuizId { get; set; }
+    public List<AnswerSubmission> Answers { get; set; } = new();
+}
+
+    public class AnswerSubmission
+    {
+        public long QuestionId { get; set; }
+        public string SelectedAnswer { get; set; } = string.Empty;
+    }
+
 
     public class QuizQuestionDto
     {

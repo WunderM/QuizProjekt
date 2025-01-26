@@ -41,19 +41,18 @@ namespace QuizPlatform_API.Controllers
             return Ok(user);
         }
 
-        // POST: api/User/Login
         [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
             if (string.IsNullOrEmpty(request.Username) || string.IsNullOrEmpty(request.Password))
             {
-                return BadRequest("Username and password are required.");
+                return BadRequest(new { Message = "Username and password are required." });
             }
 
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == request.Username);
             if (user == null)
             {
-                return Unauthorized("Invalid username or password.");
+                return Unauthorized(new { Message = "Invalid username or password." });
             }
 
             // Verify password
@@ -62,7 +61,7 @@ namespace QuizPlatform_API.Controllers
                 var hash = Convert.ToBase64String(sha256.ComputeHash(Encoding.UTF8.GetBytes(request.Password)));
                 if (hash != user.PasswordHash)
                 {
-                    return Unauthorized("Invalid username or password.");
+                    return Unauthorized(new { Message = "Invalid username or password." });
                 }
             }
 
@@ -70,8 +69,14 @@ namespace QuizPlatform_API.Controllers
             user.LastLogin = DateTime.UtcNow;
             await _context.SaveChangesAsync();
 
-            return Ok(new { Message = "Login successful." });
+            // Return User ID and success message
+            return Ok(new
+            {
+                UserId = user.Id, // Include the User ID in the response
+                Message = "Login successful."
+            });
         }
+
 
         // POST: api/User/Register
         [HttpPost("Register")]
