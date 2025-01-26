@@ -77,8 +77,8 @@ namespace SoftwareEngineering
         }
         private void GuestClick(object sender, RoutedEventArgs e)
         {
-            var C = new Categorie();
-            C.ShowDialog();
+            Guest.Content =  new CategoryPage();
+            ShowFrame("Guest");
         }
 
 

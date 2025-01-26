@@ -32,7 +32,7 @@ namespace SoftwareEngineering
                 MessageBox.Show("Login erfolgreich!");
                 // Hier kannst du zur nächsten Seite navigieren
                 var mainWindow = (MainWindow)Application.Current.MainWindow;
-                mainWindow.MainW.Content = new Page(); // Beispielseite
+                mainWindow.MainW.Visibility = Visibility.Visible; // Hauptseite
             }
             else
             {
