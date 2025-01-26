@@ -1,0 +1,46 @@
+<Page x:Class="SoftwareEngineering.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="About"
+    Background="{StaticResource BackgroundBrush}">
+    
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Überschrift und Beschreibung -->
+        <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="600">
+            <TextBlock Text="Über das Quiz-Spiel"
+                Style="{StaticResource TitleTextBlockStyle}"
+                HorizontalAlignment="Center" />
+
+            <TextBlock Text="Willkommen zum ultimativen Quiz-Spiel! Teste dein Wissen in verschiedenen Kategorien, "
+                TextWrapping="Wrap" 
+                FontSize="18"
+                Margin="0,10,0,0" />
+
+            <TextBlock Text="Egal ob Allgemeinwissen, Wissenschaft, Geschichte oder Popkultur - dieses Spiel fordert "
+                TextWrapping="Wrap" 
+                FontSize="18" />
+
+            <TextBlock Text="dich in jedem Bereich heraus. Setze deine besten Scores, spiele gegen deine Freunde und "
+                TextWrapping="Wrap" 
+                FontSize="18" />
+
+            <TextBlock Text="beweise, dass du der ultimative Quizmeister bist!"
+                TextWrapping="Wrap" 
+                FontSize="18" />
+        </StackPanel>
+
+        <!-- Zurück-Schaltfläche -->
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Button Content="Zurück zum Hauptmenü" 
+                    Width="200" 
+                    Height="50" 
+                    Style="{StaticResource LoginButtonStyle}" 
+                    Click="BackToMainMenu_Click" />
+        </StackPanel>
+    </Grid>
+</Page>

@@ -96,17 +96,15 @@ namespace SoftwareEngineering
 
         private async void SubmitAnswers()
         {
-            if(App.SharedViewModel.UserID > 0 ){
-                try
-                {
-                    var result = await _apiClient.SubmitAnswersAsync(_quizId, _answers);
-                    App.SharedViewModel.ShowEndPage(_quizId, _answers.Count, result.Score);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Fehler beim Übermitteln der Antworten: {ex.Message}");
-                }
+            try
+            {
+                var result = await _apiClient.SubmitAnswersAsync(_quizId, _answers);
+                App.SharedViewModel.ShowEndPage(_quizId, _answers.Count, result.Score);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Fehler beim Übermitteln der Antworten: {ex.Message}");
+            }        
         }
     }
 }

@@ -27,16 +27,16 @@
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Border CornerRadius="8" Background="{StaticResource PrimaryBrush}" HorizontalAlignment="Center" Margin="0,20,0,0">
                 <Button Content="Zum Hauptmenü" 
-                    Style="{StaticResource LoginButtonStyle}"
-                    Width="150" 
-                    Height="50" 
+                    Style="{StaticResource ScoreButtonStyle}"
+                    Width="200" 
+                    Height="80" 
                     Click="BackToMainMenu_Click" />
             </Border>
             <Border CornerRadius="8" Background="{StaticResource PrimaryBrush}" HorizontalAlignment="Center" Margin="0,20,0,0">
                 <Button Content="Quiz neu starten" 
-                    Style="{StaticResource LoginButtonStyle}"
-                    Width="150" 
-                    Height="50" 
+                    Style="{StaticResource ScoreButtonStyle}"
+                    Width="200" 
+                    Height="80" 
                     Click="RestartQuiz_Click" />
             </Border>
         </StackPanel>

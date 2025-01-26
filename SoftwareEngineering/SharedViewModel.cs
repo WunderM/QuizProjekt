@@ -10,7 +10,7 @@ namespace SoftwareEngineering
     {
         private bool _isLoggedIn;
         private string _username;
-        private long _userId;
+        private long _userId = 0;
 
         private Page _currentPage;
 
@@ -65,6 +65,9 @@ namespace SoftwareEngineering
                 case "CategoriePage":
                     CurrentPage = new CategoryPage();
                     break;
+                case "AboutPage":
+                    CurrentPage = new AboutPage();
+                    break;
                 default:
                     throw new ArgumentException($"Page '{pageName}' does not exist.");
             }
@@ -88,6 +91,7 @@ namespace SoftwareEngineering
                 }
                 else
                 {
+                    _userId = 0;
                     ChangePage("StartPage");
                 }
 

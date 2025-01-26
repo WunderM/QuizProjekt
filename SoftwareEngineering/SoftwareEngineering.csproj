@@ -21,6 +21,7 @@
     <Page Include="QuizPage.xaml" />
     <Page Include="QuizQuestionPage.xaml" />
     <Page Include="ScorePage.xaml" />
+    <Page Include="AboutPage.xaml" />
     <Page Include="Resources/DesignResource.xaml" />
   </ItemGroup>
 

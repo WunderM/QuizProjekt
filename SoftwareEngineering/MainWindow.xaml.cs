@@ -43,8 +43,7 @@ namespace SoftwareEngineering
 
         private void AboutClick(object sender, RoutedEventArgs e)
         {
-            // Zeige Informationen über die App
-            MessageBox.Show("About-Button wurde geklickt!");
+            App.SharedViewModel.ChangePage("AboutPage");
         }
 
         private void HelpClick(object sender, RoutedEventArgs e)
