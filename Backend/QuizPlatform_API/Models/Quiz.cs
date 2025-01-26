@@ -16,4 +16,6 @@ public partial class Quiz
     public virtual QuizCategory? Category { get; set; } // Navigationseigenschaft für die Kategorie
 
     public virtual ICollection<Highscore> Highscores { get; set; } = new List<Highscore>(); // Verknüpfte Highscores
+
+    public virtual ICollection<QuizQuestion> QuizQuestions { get; set; } = new List<QuizQuestion>(); // Verknüpfte Highscores
 }

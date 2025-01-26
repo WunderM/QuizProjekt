@@ -21,6 +21,8 @@ public partial class PostgresContext : DbContext
 
     public virtual DbSet<QuizCategory> QuizCategorys { get; set; }
 
+    public virtual DbSet<QuizQuestion> QuizQuestions { get; set; }
+
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -115,6 +117,38 @@ public partial class PostgresContext : DbContext
             entity.Property(e => e.PasswordHash)
                 .HasColumnName("password_hash")
                 .HasColumnType("character varying");
+        });
+
+        // QuizQuestions
+        modelBuilder.Entity<QuizQuestion>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("QuizQuestion_pkey");
+
+            entity.ToTable("quiz_questions");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Question)
+                .HasColumnName("question")
+                .HasColumnType("character varying");
+            entity.Property(e => e.AnswerTrue)
+                .HasColumnName("answer_true")
+                .HasColumnType("character varying");
+            entity.Property(e => e.AnswerFalseOne)
+                .HasColumnName("answer_false_one")
+                .HasColumnType("character varying");
+            entity.Property(e => e.AnswerFalseTwo)
+                .HasColumnName("answer_false_two")
+                .HasColumnType("character varying");
+            entity.Property(e => e.AnswerFalseThree)
+                .HasColumnName("answer_false_three")
+                .HasColumnType("character varying");
+            entity.Property(e => e.QuizId)
+                .HasColumnName("quiz_id");
+
+            entity.HasOne(d => d.Quiz)
+                .WithMany(p => p.QuizQuestions)
+                .HasForeignKey(d => d.QuizId)
+                .HasConstraintName("quiz_question_quiz_fkey");
         });
 
 
