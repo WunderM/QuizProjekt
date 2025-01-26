@@ -27,7 +27,7 @@ namespace SoftwareEngineering
 
         private void SignInClick(object sender, RoutedEventArgs e)
         {
-            Signin.Content = new SignInPage();   
+            Signin.Content = new SignInPage();
             ShowFrame("Signin");
         }
 
@@ -59,7 +59,7 @@ namespace SoftwareEngineering
 
         private void LoginClick(object sender, RoutedEventArgs e)
         {
-            Login.Content = new LoginPage();   
+            Login.Content = new LoginPage();
             ShowFrame("Login");
         }
 
@@ -77,10 +77,33 @@ namespace SoftwareEngineering
         }
         private void GuestClick(object sender, RoutedEventArgs e)
         {
-            Guest.Content =  new CategoryPage();
+            Guest.Content = new CategoryPage();
             ShowFrame("Guest");
         }
 
+        private void HomeClick(object sender, RoutedEventArgs e)
+        {
+            // Lade die Startseite in den Hauptinhalt
+            MessageBox.Show("Home-Button wurde geklickt!");
+        }
+
+        private void AboutClick(object sender, RoutedEventArgs e)
+        {
+            // Zeige Informationen über die App
+            MessageBox.Show("About-Button wurde geklickt!");
+        }
+
+        private void HelpClick(object sender, RoutedEventArgs e)
+        {
+            // Zeige Hilfeseite
+            MessageBox.Show("Help-Button wurde geklickt!");
+        }
+
+        private void LogoutClick(object sender, RoutedEventArgs e)
+        {
+            // Logout-Logik (z. B. zum Login-Fenster zurückkehren)
+            MessageBox.Show("Logout-Button wurde geklickt!");
+        }
 
     }
 }

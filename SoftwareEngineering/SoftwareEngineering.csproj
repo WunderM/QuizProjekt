@@ -18,6 +18,7 @@
     <Page Include="SignInPage.xaml" />
     <Page Include="CategoriePage.xaml" />
     <Page Include="Resources/DesignResource.xaml" />
+    <Resources Include="Resources/logo.png" />
   </ItemGroup>
 
 </Project>
