@@ -1,0 +1,47 @@
+﻿<Page x:Class="SoftwareEngineering.SignInPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="SignIn"
+    Background="{StaticResource BackgroundBrush}">
+    <Grid>
+        <!-- Hauptlayout mit Zeilen -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" /> <!-- Header -->
+            <RowDefinition Height="*" />   <!-- Inhalt -->
+        </Grid.RowDefinitions>
+
+        <!-- Titel -->
+        <TextBlock Text="Sign In" 
+            Style="{StaticResource TitleTextBlockStyle}" 
+            Grid.Row="0" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" 
+            Margin="0,20,0,20" />
+
+        <!-- Eingabefelder und Button -->
+        <StackPanel Grid.Row="1" 
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Center" 
+                    Width="400">
+            <!-- Name -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                <TextBlock Text="Name:" Style="{StaticResource LabelTextBlockStyle}" />
+                <TextBox x:Name="SigninName" Style="{StaticResource StandardTextBoxStyle}" Width="250" />
+            </StackPanel>
+
+            <!-- Password -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                <TextBlock Text="Password:" Style="{StaticResource LabelTextBlockStyle}" />
+                <PasswordBox x:Name="SigninPassword" Style="{StaticResource StandardPasswordBoxStyle}" Width="250" />
+            </StackPanel>
+
+            <!-- Sign In Button -->
+            <Border CornerRadius="8" Background="{StaticResource PrimaryBrush}" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <Button Content="Join Us" 
+                        x:Name="Enter" 
+                        Style="{StaticResource LoginButtonStyle}" 
+                        Click="Register" />
+            </Border>
+        </StackPanel>
+    </Grid>
+</Page>
