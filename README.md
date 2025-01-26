@@ -1,3 +1,9 @@
+# Projektbeteiligte
+Maurice Wunder |
+Moritz Gershoff |
+Kanat Arngold
+
+
 # QuizProjekt
 Projekt für das Fach Software Engineering
 
