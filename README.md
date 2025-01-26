@@ -1,6 +1,6 @@
 # Projektbeteiligte
-Maurice Wunder
-Moritz Gershoff
+Maurice Wunder |
+Moritz Gershoff |
 Kanat Arngold
 
 
