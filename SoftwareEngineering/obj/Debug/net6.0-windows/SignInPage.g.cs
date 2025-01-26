@@ -75,7 +75,7 @@ namespace SoftwareEngineering {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SoftwareEngineering;V1.0.0.0;component/signinpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SoftwareEngineering;component/signinpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\SignInPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
