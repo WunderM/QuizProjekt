@@ -12,6 +12,7 @@ C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\StartPage.baml
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\QuizPage.baml
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\QuizQuestionPage.baml
+C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\ScorePage.baml
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\Resources\DesignResource.baml
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\LoginPage.g.cs
@@ -20,6 +21,7 @@ C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\StartPage.g.cs
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\QuizPage.g.cs
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\QuizQuestionPage.g.cs
+C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\ScorePage.g.cs
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\App.g.cs
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\SoftwareEngineering_MarkupCompile.cache
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\obj\Debug\net6.0-windows\SoftwareEngineering_MarkupCompile.lref

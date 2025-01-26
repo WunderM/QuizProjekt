@@ -18,8 +18,7 @@ namespace SoftwareEngineering
             _httpClient = new HttpClient();
         }
 
-        // Login
-        public async Task<bool> LoginAsync(string username, string password)
+        public async Task<long?> LoginAsync(string username, string password)
         {
             try
             {
@@ -30,17 +29,31 @@ namespace SoftwareEngineering
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return true; // Login erfolgreich
+                    var jsonResponse = await response.Content.ReadAsStringAsync();
+                    var result = JsonSerializer.Deserialize<LoginResponse>(jsonResponse, new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+                    return result?.UserId; // Rückgabe der User ID
                 }
 
-                return false; // Login fehlgeschlagen
+                return null; // Login fehlgeschlagen
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Fehler beim Login: {ex.Message}");
-                return false;
+                return null;
             }
         }
+
+        public class LoginResponse
+        {
+            public long UserId { get; set; }
+            public string Message { get; set; }
+        }
+
+
 
         // Registrierung
         public async Task<bool> RegisterAsync(string username, string password)
@@ -109,7 +122,8 @@ namespace SoftwareEngineering
 
                 var quizzes = wrapper?.Questions ?? new List<QuizQuestion>();
 
-                return quizzes ?? new List<QuizQuestion>();}// Rückgabe der Highscore-Liste
+                return quizzes ?? new List<QuizQuestion>();
+            }// Rückgabe der Highscore-Liste
             catch (Exception ex)
             {
                 Console.WriteLine($"Fehler beim Abrufen der Quizfragen: {ex.Message}");
@@ -117,22 +131,53 @@ namespace SoftwareEngineering
             }
         }
 
-        public async Task<bool> SubmitAnswersAsync(List<AnswerSubmission> answers)
+        public async Task<SubmitAnswersResult> SubmitAnswersAsync(long quizId, List<AnswerSubmission> answers)
         {
             try
             {
-                // Antworten serialisieren und an den API-Endpunkt senden
-                var content = new StringContent(JsonSerializer.Serialize(answers), Encoding.UTF8, "application/json");
+                // Wrapper erstellen
+                var request = new AnswerSubmissionRequest
+                {
+                    UserId = App.SharedViewModel.UserID,
+                    QuizId = quizId,
+                    Answers = answers
+                };
+
+                // Wrapper serialisieren
+                var json = JsonSerializer.Serialize(request, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                // HTTP-Request erstellen
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
                 var response = await _httpClient.PostAsync($"{_baseUrl}/QuizQuestion/SubmitAnswers", content);
 
-                return response.IsSuccessStatusCode;
+                if (response.IsSuccessStatusCode)
+                {
+                    // Server-Antwort lesen
+                    var jsonResponse = await response.Content.ReadAsStringAsync();
+
+                    // Antwort deserialisieren
+                    var result = JsonSerializer.Deserialize<SubmitAnswersResult>(jsonResponse, new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+                    return result; // Ergebnis zurückgeben
+                }
+
+                Console.WriteLine($"Server-Fehler: {response.StatusCode}");
+                return null; // Kein gültiges Ergebnis
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Fehler beim Übermitteln der Antworten: {ex.Message}");
-                return false;
+                return null; // Bei Fehler kein Ergebnis
             }
         }
+
+
 
         public async Task<List<Quiz>> GetAvailableQuizzesAsync(long categoryId)
         {

@@ -13,12 +13,14 @@ namespace SoftwareEngineering
         private int _currentQuestionIndex;
         private List<AnswerSubmission> _answers; // Speichert die Antworten des Spielers
 
+        private long _quizId; 
+
         public QuizQuestionPage(long quizId, int numberOfQuestions)
         {
             InitializeComponent();
 
             DataContext = App.SharedViewModel;
-            
+            _quizId = quizId;
             _apiClient = new ApiClient();
             _answers = new List<AnswerSubmission>();
             LoadQuestions(quizId, numberOfQuestions);
@@ -94,16 +96,16 @@ namespace SoftwareEngineering
 
         private async void SubmitAnswers()
         {
-            try
-            {
-                var result = await _apiClient.SubmitAnswersAsync(_answers);
-                MessageBox.Show(result
-                    ? "Das Quiz wurde erfolgreich abgeschlossen!"
-                    : "Es gab ein Problem beim Übermitteln der Antworten.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Fehler beim Übermitteln der Antworten: {ex.Message}");
+            if(App.SharedViewModel.UserID > 0 ){
+                try
+                {
+                    var result = await _apiClient.SubmitAnswersAsync(_quizId, _answers);
+                    App.SharedViewModel.ShowEndPage(_quizId, _answers.Count, result.Score);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Fehler beim Übermitteln der Antworten: {ex.Message}");
+                }
             }
         }
     }

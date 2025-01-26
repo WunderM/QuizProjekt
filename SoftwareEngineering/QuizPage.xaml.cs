@@ -84,8 +84,7 @@ namespace SoftwareEngineering
             if (_selectedQuiz != null)
             {
                 // Übergibt die Auswahl an das nächste Fenster
-                var quizPage = new QuizQuestionPage(_selectedQuiz.Id, _selectedQuestionCount);
-                NavigationService.Navigate(quizPage);
+                App.SharedViewModel.StartQuiz(_selectedQuiz.Id, _selectedQuestionCount);
             }
         }
     }

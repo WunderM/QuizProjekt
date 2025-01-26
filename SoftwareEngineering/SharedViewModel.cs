@@ -10,6 +10,7 @@ namespace SoftwareEngineering
     {
         private bool _isLoggedIn;
         private string _username;
+        private long _userId;
 
         private Page _currentPage;
 
@@ -26,6 +27,15 @@ namespace SoftwareEngineering
                 OnPropertyChanged();
             }
         }
+
+        public void StartQuiz(long quizId, int numberOfQuestions){
+            CurrentPage  = new QuizQuestionPage(quizId, numberOfQuestions); 
+        }
+
+        public void ShowEndPage(long quizId, int numberOfAnswers,double Score){
+            CurrentPage = new ScorePage(Score, quizId,numberOfAnswers);
+        }
+
 
         public void ChangePage(string pageName, long Id)
         {
@@ -81,6 +91,13 @@ namespace SoftwareEngineering
                     ChangePage("StartPage");
                 }
 
+            }
+        }
+
+        public long UserID{
+            get => _userId;
+            set{
+                _userId = value;
             }
         }
 

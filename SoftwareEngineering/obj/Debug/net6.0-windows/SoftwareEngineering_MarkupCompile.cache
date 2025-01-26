@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\studium\SoftwareEngineering\QuizProjekt\SoftwareEngineering\App.xaml
-82011136703
+9-885747665
 
-201549362913
+24-1796420314
 1941201961
-MainWindow.xaml;LoginPage.xaml;SignInPage.xaml;CategoriePage.xaml;StartPage.xaml;QuizPage.xaml;QuizQuestionPage.xaml;Resources/DesignResource.xaml;
+MainWindow.xaml;LoginPage.xaml;SignInPage.xaml;CategoriePage.xaml;StartPage.xaml;QuizPage.xaml;QuizQuestionPage.xaml;ScorePage.xaml;Resources/DesignResource.xaml;
 
 False
 

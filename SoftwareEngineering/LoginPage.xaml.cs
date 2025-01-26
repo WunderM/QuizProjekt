@@ -27,10 +27,11 @@ namespace SoftwareEngineering
             }
 
             // API-Aufruf: Login
-            var success = await _apiClient.LoginAsync(username, password);
+            var userId  = await _apiClient.LoginAsync(username, password);
 
-            if (success)
+            if (userId != null)
             {
+                App.SharedViewModel.UserID = userId ?? 0;
                 App.SharedViewModel.IsLoggedIn = true;
                 App.SharedViewModel.Username = username;
             }
