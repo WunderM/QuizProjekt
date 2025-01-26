@@ -13,5 +13,14 @@ namespace SoftwareEngineering
     /// </summary>
     public partial class App : Application
     {
+        public static SharedViewModel SharedViewModel { get; } = new SharedViewModel();
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            // Setze initialen Status
+            SharedViewModel.IsLoggedIn = false;
+        }
     }
 }

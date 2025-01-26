@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <EnableDefaultPageItems>false</EnableDefaultPageItems>
+  </PropertyGroup>
+
+  <ItemGroup><!-- Keine expliziten Compile-Elemente mehr notwendig -->
+  
+    <None Remove="EndPage.xaml" />
+    <None Remove="Questions.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="App.xaml" />
+    <Page Include="EndPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml" />
+    <Page Include="LoginPage.xaml" />
+    <Page Include="Categorie.xaml" />
+    <Page Include="Questions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources/DesignResource.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="QuizzFragen.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="SignIn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+</Project>
