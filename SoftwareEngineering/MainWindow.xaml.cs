@@ -22,69 +22,23 @@ namespace SoftwareEngineering
     {
         public MainWindow()
         {
+            
             InitializeComponent();
-        }
 
-        private void SignInClick(object sender, RoutedEventArgs e)
-        {
-            Signin.Content = new SignInPage();
-            ShowFrame("Signin");
-        }
-
-        private void ShowFrame(string frameName)
-        {
-            // Alle Frames ausblenden
-            MainW.Visibility = Visibility.Collapsed;
-            Guest.Visibility = Visibility.Collapsed;
-            Login.Visibility = Visibility.Collapsed;
-            Signin.Visibility = Visibility.Collapsed;
-
-            // Nur den gewünschten Frame anzeigen
-            switch (frameName)
-            {
-                case "MainW":
-                    MainW.Visibility = Visibility.Visible;
-                    break;
-                case "Guest":
-                    Guest.Visibility = Visibility.Visible;
-                    break;
-                case "Login":
-                    Login.Visibility = Visibility.Visible;
-                    break;
-                case "Signin":
-                    Signin.Visibility = Visibility.Visible;
-                    break;
-            }
-        }
-
-        private void LoginClick(object sender, RoutedEventArgs e)
-        {
-            Login.Content = new LoginPage();
-            ShowFrame("Login");
-        }
-
-        private void closeMainWindow(object sender, RoutedEventArgs e)
-        {
-            var result = MessageBox.Show("Möchten Sie das Fenster wirklich schließen?",
-                "Fenster schließen",
-                MessageBoxButton.YesNo,
-                MessageBoxImage.Question);
-
-            if (result == MessageBoxResult.Yes)
-            {
-                this.Close();
-            }
-        }
-        private void GuestClick(object sender, RoutedEventArgs e)
-        {
-            Guest.Content = new CategoryPage();
-            ShowFrame("Guest");
+            // Setze das ViewModel als DataContext
+            DataContext = App.SharedViewModel;
         }
 
         private void HomeClick(object sender, RoutedEventArgs e)
         {
             // Lade die Startseite in den Hauptinhalt
-            MessageBox.Show("Home-Button wurde geklickt!");
+            if(App.SharedViewModel.IsLoggedIn){
+                App.SharedViewModel.ChangePage("CategoriePage");
+            }
+            else{
+                App.SharedViewModel.ChangePage("StartPage");
+            }
+            
         }
 
         private void AboutClick(object sender, RoutedEventArgs e)
@@ -101,9 +55,29 @@ namespace SoftwareEngineering
 
         private void LogoutClick(object sender, RoutedEventArgs e)
         {
-            // Logout-Logik (z. B. zum Login-Fenster zurückkehren)
-            MessageBox.Show("Logout-Button wurde geklickt!");
+            // Setze den Login-Status zurück und navigiere zur Login-Seite
+            App.SharedViewModel.IsLoggedIn = false;
+            App.SharedViewModel.Username = string.Empty;
+            
         }
 
+         private void LoginClick(object sender, RoutedEventArgs e)
+        {
+            // Setze den Login-Status zurück und navigiere zur Login-Seite
+            App.SharedViewModel.ChangePage("LoginPage");
+        }
+
+        private void closeMainWindow(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Möchten Sie das Fenster wirklich schließen?",
+                "Fenster schließen",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }

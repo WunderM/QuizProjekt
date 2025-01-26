@@ -25,13 +25,13 @@
                     Width="400">
             <!-- Name -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
-                <TextBlock Text="Name:" Style="{StaticResource LabelTextBlockStyle}" />
+                <TextBlock Text="Name:" Style="{StaticResource LabelTextBlockStyle}" Width="120"/>
                 <TextBox x:Name="SigninName" Style="{StaticResource StandardTextBoxStyle}" Width="250" />
             </StackPanel>
 
             <!-- Password -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
-                <TextBlock Text="Password:" Style="{StaticResource LabelTextBlockStyle}" />
+                <TextBlock Text="Password:" Style="{StaticResource LabelTextBlockStyle}"  Width="120"/>
                 <PasswordBox x:Name="SigninPassword" Style="{StaticResource StandardPasswordBoxStyle}" Width="250" />
             </StackPanel>
 

@@ -11,6 +11,7 @@ namespace SoftwareEngineering
         {
             InitializeComponent();
             _apiClient = new ApiClient();
+            DataContext = App.SharedViewModel;
         }
 
         private async void Register(object sender, RoutedEventArgs e)
@@ -31,8 +32,7 @@ namespace SoftwareEngineering
             {
                 MessageBox.Show("Registrierung erfolgreich!");
                 // Hier kannst du zum Login weiterleiten
-                var mainWindow = (MainWindow)Application.Current.MainWindow;
-                mainWindow.MainW.Content = new LoginPage();
+                
             }
             else
             {

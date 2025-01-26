@@ -1,6 +1,8 @@
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace SoftwareEngineering
 {
@@ -9,6 +11,43 @@ namespace SoftwareEngineering
         private bool _isLoggedIn;
         private string _username;
 
+        private Page _currentPage;
+
+        public SharedViewModel()
+        {
+        }
+
+        public Page CurrentPage
+        {
+            get => _currentPage;
+            set
+            {
+                _currentPage = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public void ChangePage(string pageName)
+        {
+            switch (pageName)
+            {
+                case "StartPage":
+                    CurrentPage = new StartPage();
+                    break;
+                case "LoginPage":
+                    CurrentPage = new LoginPage();
+                    break;
+                case "SignInPage":
+                    CurrentPage = new SignInPage();
+                    break;
+                case "CategoriePage":
+                    CurrentPage = new CategoryPage();
+                    break;
+                default:
+                    throw new ArgumentException($"Page '{pageName}' does not exist.");
+            }
+        }
+
         // Login-Status
         public bool IsLoggedIn
         {
@@ -16,10 +55,18 @@ namespace SoftwareEngineering
             set
             {
                 _isLoggedIn = value;
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(LogoutButtonVisibility));
-                OnPropertyChanged(nameof(LoginButtonVisibility));
-                OnPropertyChanged(nameof(HeaderUsername));
+                if(_isLoggedIn){
+                    OnPropertyChanged();
+                    OnPropertyChanged(nameof(IsLoggedIn));
+                    OnPropertyChanged(nameof(LogoutButtonVisibility));
+                    OnPropertyChanged(nameof(LoginButtonVisibility));
+                    OnPropertyChanged(nameof(HeaderUsername));
+                    ChangePage("CategoriePage");
+                }
+                else{
+                    ChangePage("StartPage");
+                }
+                
             }
         }
 

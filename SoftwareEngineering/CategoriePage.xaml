@@ -5,14 +5,14 @@
       Background="{StaticResource BackgroundBrush}">
     <Grid>
         <TextBlock Text="Kategorien" 
-                   Style="{StaticResource TitleTextBlockStyle}" 
-                   HorizontalAlignment="Center" 
-                   Margin="0,20,0,20" />
+          Style="{StaticResource TitleTextBlockStyle}" 
+          HorizontalAlignment="Center" 
+          Margin="0,20,0,20" />
         <ListBox x:Name="CategoryList" 
-                 Style="{StaticResource StandardListBoxStyle}" 
-                 HorizontalAlignment="Center" 
-                 VerticalAlignment="Center" 
-                 Width="400" 
-                 Height="300" />
+          Style="{StaticResource StandardListBoxStyle}" 
+          HorizontalAlignment="Center" 
+          VerticalAlignment="Center" 
+          Width="400" 
+          Height="300" />
     </Grid>
 </Page>

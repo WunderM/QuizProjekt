@@ -10,6 +10,8 @@ namespace SoftwareEngineering
         public CategoryPage()
         {
             InitializeComponent();
+
+            DataContext = App.SharedViewModel;
             _apiClient = new ApiClient();
             LoadCategories();
         }

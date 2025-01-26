@@ -11,6 +11,8 @@ namespace SoftwareEngineering
         {
             InitializeComponent();
             _apiClient = new ApiClient();
+
+            DataContext = App.SharedViewModel;
         }
 
         private async void LogIn(object sender, RoutedEventArgs e)
@@ -29,10 +31,8 @@ namespace SoftwareEngineering
 
             if (success)
             {
-                MessageBox.Show("Login erfolgreich!");
-                // Hier kannst du zur nächsten Seite navigieren
-                var mainWindow = (MainWindow)Application.Current.MainWindow;
-                mainWindow.MainW.Visibility = Visibility.Visible; // Hauptseite
+                App.SharedViewModel.IsLoggedIn = true;
+                App.SharedViewModel.Username = username;
             }
             else
             {

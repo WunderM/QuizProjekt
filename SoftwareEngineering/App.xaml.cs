@@ -19,6 +19,7 @@ namespace SoftwareEngineering
         {
             base.OnStartup(e);
 
+            SharedViewModel.CurrentPage = new StartPage(); // Initialisiere die Startseite
             // Setze initialen Status
             SharedViewModel.IsLoggedIn = false;
         }
