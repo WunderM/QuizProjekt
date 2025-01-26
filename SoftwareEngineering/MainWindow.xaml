@@ -30,9 +30,6 @@
                 <Button Content="About"
                         Style="{StaticResource NavigationButtonStyle}"
                         Click="AboutClick" />
-                <Button Content="Help"
-                        Style="{StaticResource NavigationButtonStyle}"
-                        Click="HelpClick" />
             </StackPanel>
 
             <!-- Logo/Icon -->
