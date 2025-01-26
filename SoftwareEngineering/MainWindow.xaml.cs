@@ -61,7 +61,7 @@ namespace SoftwareEngineering
             
         }
 
-         private void LoginClick(object sender, RoutedEventArgs e)
+        private void LoginClick(object sender, RoutedEventArgs e)
         {
             // Setze den Login-Status zurück und navigiere zur Login-Seite
             App.SharedViewModel.ChangePage("LoginPage");

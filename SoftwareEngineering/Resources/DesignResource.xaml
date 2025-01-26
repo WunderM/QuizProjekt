@@ -80,6 +80,22 @@
         </Setter>
     </Style>
 
+    <!-- Stile für Button -->
+    <Style TargetType="Button" x:Key="QuestionButtonStyle">
+        <Setter Property="Width" Value="400" />
+        <Setter Property="Height" Value="80" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="FontSize" Value="30" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect ShadowDepth="5" BlurRadius="10" Color="{StaticResource SecondaryColor}" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style x:Key="MainButtonStyle" TargetType="Button">
     <Setter Property="Width" Value="400" />
     <Setter Property="Height" Value="80" />

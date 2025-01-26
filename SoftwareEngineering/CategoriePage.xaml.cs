@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace SoftwareEngineering
@@ -19,12 +20,18 @@ namespace SoftwareEngineering
         private async void LoadCategories()
         {
             // Kategorien abrufen
-            List<string> categories = await _apiClient.GetCategoriesAsync();
+            List<Category> categories = await _apiClient.GetCategoriesAsync();
 
-            // Kategorien in der ListBox anzeigen
-            foreach (var category in categories)
+
+            CategoryList.ItemsSource = categories;
+            CategoryList.DisplayMemberPath = "Title";
+        }
+
+        private void CategoryList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (CategoryList.SelectedItem is Category selectedCategory)
             {
-                CategoryList.Items.Add(category);
+                App.SharedViewModel.ChangePage("Quiz", selectedCategory.Id);
             }
         }
     }

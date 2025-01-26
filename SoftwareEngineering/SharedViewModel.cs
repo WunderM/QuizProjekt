@@ -27,6 +27,18 @@ namespace SoftwareEngineering
             }
         }
 
+        public void ChangePage(string pageName, long Id)
+        {
+            switch (pageName)
+            {
+                case "Quiz":
+                    CurrentPage = new QuizPage(Id);
+                    break;
+                default:
+                    throw new ArgumentException($"Page '{pageName}' does not exist.");
+            }
+        }
+
         public void ChangePage(string pageName)
         {
             switch (pageName)
@@ -55,7 +67,8 @@ namespace SoftwareEngineering
             set
             {
                 _isLoggedIn = value;
-                if(_isLoggedIn){
+                if (_isLoggedIn)
+                {
                     OnPropertyChanged();
                     OnPropertyChanged(nameof(IsLoggedIn));
                     OnPropertyChanged(nameof(LogoutButtonVisibility));
@@ -63,10 +76,11 @@ namespace SoftwareEngineering
                     OnPropertyChanged(nameof(HeaderUsername));
                     ChangePage("CategoriePage");
                 }
-                else{
+                else
+                {
                     ChangePage("StartPage");
                 }
-                
+
             }
         }
 

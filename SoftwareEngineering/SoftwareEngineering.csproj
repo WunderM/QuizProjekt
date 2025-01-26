@@ -18,6 +18,8 @@
     <Page Include="SignInPage.xaml" />
     <Page Include="CategoriePage.xaml" />
     <Page Include="StartPage.xaml" />
+    <Page Include="QuizPage.xaml" />
+    <Page Include="QuizQuestionPage.xaml" />
     <Page Include="Resources/DesignResource.xaml" />
   </ItemGroup>
 
