@@ -16,48 +16,37 @@ namespace QuizPlatform_API.Controllers
         }
 
         [HttpGet("{quizId}")]
-        public async Task<ActionResult<IEnumerable<QuizQuestion>>> GetQuizQuestions(long quizId, [FromQuery] int? limit = 20)
+        public IActionResult GetQuestions(long quizId, int limit = 20)
         {
-            try
-            {
-                var questions = await _context.QuizQuestions
-                    .Where(q => q.QuizId == quizId)
-                    .Take(limit ?? 20)
-                    .ToListAsync();
-
-                if (questions == null || questions.Count == 0)
+            // Abrufen der Fragen ohne Mischen der Antworten
+            var questions = _context.QuizQuestions
+                .Where(q => q.QuizId == quizId)
+                .Take(limit)
+                .Select(q => new QuizQuestionDto
                 {
-                    return NotFound($"Keine Fragen für das Quiz mit der ID {quizId} gefunden.");
-                }
+                    Id = q.Id,
+                    Question = q.Question,
+                    Answers = new List<string> { q.AnswerTrue, q.AnswerFalseOne, q.AnswerFalseTwo, q.AnswerFalseThree }
+                })
+                .ToList();
 
-                return Ok(questions);
-            }
-            catch (Exception ex)
+            // Antworten mischen
+            foreach (var question in questions)
             {
-                return StatusCode(500, $"Ein Fehler ist aufgetreten: {ex.Message}");
+                question.Answers = ShuffleAnswers(question.Answers);
             }
+
+            return Ok(questions);
         }
 
-        [HttpPost]
-        public async Task<ActionResult<QuizQuestion>> PostQuizQuestion(QuizQuestion quizQuestion)
+        // Mischen der Antworten (statische Methode)
+        private static List<string> ShuffleAnswers(List<string> answers)
         {
-            try
-            {
-                if (quizQuestion == null)
-                {
-                    return BadRequest("Ungültige Eingabe.");
-                }
-
-                _context.QuizQuestions.Add(quizQuestion);
-                await _context.SaveChangesAsync();
-
-                return CreatedAtAction(nameof(GetQuizQuestions), new { quizId = quizQuestion.QuizId }, quizQuestion);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Ein Fehler ist aufgetreten: {ex.Message}");
-            }
+            var rng = new Random();
+            return answers.OrderBy(_ => rng.Next()).ToList();
         }
+
+
 
         [HttpPut("{id}")]
         public async Task<IActionResult> PutQuizQuestion(long id, QuizQuestion quizQuestion)
@@ -100,5 +89,12 @@ namespace QuizPlatform_API.Controllers
 
             return NoContent();
         }
+    }
+
+    public class QuizQuestionDto
+    {
+        public long Id { get; set; }
+        public string Question { get; set; } = string.Empty;
+        public List<string> Answers { get; set; } = new List<string>();
     }
 }

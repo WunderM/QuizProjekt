@@ -40,25 +40,28 @@ namespace QuizPlatform_API.Controllers
             return quiz;
         }
 
-        // GET: api/Quiz/ByCategory/{categoryId}?count={count}
         [HttpGet("ByCategory/{categoryId}")]
-        public async Task<ActionResult<IEnumerable<Quiz>>> GetQuizzesByCategory(long categoryId, [FromQuery] int count = 10)
+        public async Task<ActionResult<IEnumerable<QuizDto>>> GetQuizzesByCategory(long categoryId)
         {
-            // Überprüfen, ob die angegebene Kategorie existiert
-            if (!_context.QuizCategorys.Any(c => c.Id == categoryId))
-            {
-                return NotFound(new { Message = "Category not found" });
-            }
-
-            // Quizfragen der Kategorie abrufen, auf die gewünschte Anzahl begrenzen und zurückgeben
+            // Alle Quizzes der Kategorie abrufen und die zugehörige Kategorie mitladen
             var quizzes = await _context.Quizzes
                                         .Where(q => q.CategoryId == categoryId)
-                                        .Include(q => q.Category)
-                                        .Take(count) // Anzahl der Fragen begrenzen
+                                        .Select(q => new QuizDto
+                                        {
+                                            Id = q.Id,
+                                            Title = q.Title
+                                        })
                                         .ToListAsync();
 
-            return quizzes;
+            return Ok(quizzes);
         }
+
+        public class QuizDto
+        {
+            public long Id { get; set; }
+            public string Title { get; set; }
+        }
+
 
 
         // PUT: api/Quiz/{id}
